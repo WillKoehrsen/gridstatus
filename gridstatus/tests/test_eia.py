@@ -61,6 +61,7 @@ def _check_fuel_type(df):
     assert df.columns.tolist() == columns
 
 
+@pytest.mark.local_only
 def test_list_routes():
     eia = gridstatus.EIA()
 
@@ -69,6 +70,7 @@ def test_list_routes():
     assert "interchange-data" in [r["id"] for r in routes["routes"]]
 
 
+@pytest.mark.local_only
 def test_rto_interchange():
     eia = gridstatus.EIA()
 
@@ -88,6 +90,7 @@ def test_rto_interchange():
     _check_interchange(df)
 
 
+@pytest.mark.local_only
 def test_rto_region_data():
     eia = gridstatus.EIA()
     start = "2020-01-01"
@@ -104,6 +107,7 @@ def test_rto_region_data():
     _check_region_data(df)
 
 
+@pytest.mark.local_only
 def test_fuel_type():
     eia = gridstatus.EIA()
 

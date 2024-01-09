@@ -369,9 +369,9 @@ class EIA:
                 except TypeError:
                     s2 = s1.find_next_sibling("td", class_="s2").text
                     d1 = s1.find_next_sibling("td", class_="d1").text
-                    direction = float(
-                        s1.find_next_sibling("td", class_=directions).text,
-                    )
+                    direction = s1.find_next_sibling("td", class_=directions).text
+                    direction = float(direction) if direction != "NA" else np.nan
+
                     df_petrol.loc[len(df_petrol)] = (
                         text,
                         s2,
