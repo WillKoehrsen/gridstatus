@@ -1281,9 +1281,9 @@ class Ercot(ISOBase):
         assert gen_resource_file, "Could not find gen resource file"
         assert smne_file, "Could not find smne file"
 
-        load_resource = pd.read_csv(z.open(load_resource_file))
-        gen_resource = pd.read_csv(z.open(gen_resource_file))
-        smne = pd.read_csv(z.open(smne_file))
+        load_resource = utils.read_csv_pyarrow(z.open(load_resource_file))
+        gen_resource = utils.read_csv_pyarrow(z.open(gen_resource_file))
+        smne = utils.read_csv_pyarrow(z.open(smne_file))
 
         def handle_time(df, time_col, is_interval_end=False):
             df[time_col] = pd.to_datetime(df[time_col])
@@ -1405,7 +1405,7 @@ class Ercot(ISOBase):
         data = {}
 
         for key, file in files.items():
-            doc = pd.read_csv(z.open(file))
+            doc = utils.read_csv_pyarrow(z.open(file))
             # weird that these files dont have this column like all other eroct files
             # add so we can parse
             doc["DSTFlag"] = "N"
@@ -1885,7 +1885,7 @@ class Ercot(ISOBase):
             if as_name in ["ECRSM", "ECRSS"] and cleared not in z.namelist():
                 continue
 
-            df_cleared = pd.read_csv(z.open(cleared))
+            df_cleared = utils.read_csv_pyarrow(z.open(cleared))
             all_dfs.append(df_cleared)
 
         for as_name in self_arranged_products:
@@ -1895,7 +1895,7 @@ class Ercot(ISOBase):
             if as_name in ["ECRSM", "ECRSS"] and self_arranged not in z.namelist():
                 continue
 
-            df_self_arranged = pd.read_csv(z.open(self_arranged))
+            df_self_arranged = utils.read_csv_pyarrow(z.open(self_arranged))
             all_dfs.append(df_self_arranged)
 
         def _make_bid_curve(df):
@@ -1911,7 +1911,7 @@ class Ercot(ISOBase):
             if as_name in ["ECRSM", "ECRSS"] and offers not in z.namelist():
                 continue
 
-            df_offers = pd.read_csv(z.open(offers))
+            df_offers = utils.read_csv_pyarrow(z.open(offers))
             name = f"Bid Curve - {as_name}"
             if df_offers.empty:
                 # use last df to get the index
@@ -2058,7 +2058,7 @@ class Ercot(ISOBase):
             disable=not verbose,
         ):
             log(f"Reading {doc.url}", verbose)
-            df = pd.read_csv(doc.url, compression="zip")
+            df = utils.read_csv_pyarrow(doc.url, compression="zip")
             all_dfs.append(df)
 
         if len(all_dfs) == 0:
@@ -2464,12 +2464,12 @@ class Ercot(ISOBase):
         settlement_points_file = [
             name for name in names if "Settlement_Points" in name
         ][0]
-        df = pd.read_csv(z.open(settlement_points_file))
+        df = utils.read_csv_pyarrow(z.open(settlement_points_file))
         return df
 
     def read_doc(self, doc, parse=True, verbose=False):
         log(f"Reading {doc.url}", verbose)
-        df = pd.read_csv(doc.url, compression="zip")
+        df = utils.read_csv_pyarrow(doc.url, compression="zip")
         if parse:
             df = self.parse_doc(df, verbose=verbose)
         return df

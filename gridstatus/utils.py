@@ -212,13 +212,18 @@ def get_response_blob(resp: requests.Response) -> io.BytesIO:
     return io.BytesIO(resp.content)
 
 
+def read_csv_pyarrow(*args, **kwargs):
+    kwargs["engine"] = "pyarrow"
+    return pd.read_csv(*args, **kwargs)
+
+
 def download_csvs_from_zip_url(url, process_csv=None, verbose=False):
     z = get_zip_folder(url, verbose=verbose)
 
     all_dfs = []
     for f in z.filelist:
         if f.filename.endswith(".csv"):
-            df = pd.read_csv(z.open(f.filename))
+            df = read_csv_pyarrow(z.open(f.filename))
             if process_csv:
                 df = process_csv(df, f.filename)
             all_dfs.append(df)
@@ -283,7 +288,7 @@ def load_folder(path, time_zone=None, verbose=True):
 
     dfs = []
     for f in tqdm.tqdm(all_files, disable=not verbose):
-        df = pd.read_csv(f, parse_dates=True)
+        df = read_csv_pyarrow(f, parse_dates=True)
         dfs.append(df)
 
     data = pd.concat(dfs).reset_index(drop=True)

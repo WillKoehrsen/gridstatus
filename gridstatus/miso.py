@@ -185,7 +185,7 @@ class MISO(ISOBase):
                 url = today_url
 
             log(f"Downloading LMP data from {url}", verbose)
-            data = pd.read_csv(url)
+            data = utils.read_csv_pyarrow(url)
 
             data["Interval Start"] = (
                 pd.to_datetime(data["INTERVAL"])
@@ -199,7 +199,7 @@ class MISO(ISOBase):
             today = utils._handle_date("today", self.default_timezone)
             url = f"https://docs.misoenergy.org/marketreports/{today.strftime('%Y%m%d')}_da_expost_lmp.csv"  # noqa
             log(f"Downloading LMP data from {url}", verbose)
-            today_dam_data = pd.read_csv(url, skiprows=4)
+            today_dam_data = utils.read_csv_pyarrow(url, skiprows=4)
             node_to_type = today_dam_data[["Node", "Type"]].drop_duplicates()
             data = data.merge(
                 node_to_type,
@@ -213,7 +213,7 @@ class MISO(ISOBase):
         elif market == Markets.DAY_AHEAD_HOURLY:
             url = f"https://docs.misoenergy.org/marketreports/{date.strftime('%Y%m%d')}_da_expost_lmp.csv"  # noqa
             log(f"Downloading LMP data from {url}", verbose)
-            raw_data = pd.read_csv(url, skiprows=4)
+            raw_data = utils.read_csv_pyarrow(url, skiprows=4)
             data_melted = raw_data.melt(
                 id_vars=["Node", "Type", "Value"],
                 value_vars=[col for col in raw_data.columns if col.startswith("HE")],

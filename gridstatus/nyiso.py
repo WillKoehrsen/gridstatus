@@ -364,7 +364,7 @@ class NYISO(ISOBase):
     def _get_most_recent_real_time_dispatch_interval(self, verbose=False):
         # Finds the most recent real time dispatch interval
         return pd.Timestamp(
-            pd.read_csv(
+            utils.read_csv_pyarrow(
                 "http://mis.nyiso.com/public/realtime/realtime_zone_lbmp.csv",
                 nrows=1,
             ).iloc[0]["Time Stamp"],
@@ -610,7 +610,7 @@ class NYISO(ISOBase):
         msg = f"Requesting {generator_url}"
         log(msg, verbose)
 
-        df = pd.read_csv(generator_url)
+        df = utils.read_csv_pyarrow(generator_url)
 
         # need to be updated once a year. approximately around end of april
         # find it here: https://www.nyiso.com/gold-book-resources
@@ -755,7 +755,7 @@ class NYISO(ISOBase):
         msg = f"Requesting {url}"
         log(msg, verbose)
 
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
 
         return df
 
@@ -827,7 +827,7 @@ class NYISO(ISOBase):
             msg = f"Requesting {csv_url}"
             log(msg, verbose)
 
-            df = pd.read_csv(csv_url)
+            df = utils.read_csv_pyarrow(csv_url)
             df = _handle_time(df, dataset_name)
             df["File Date"] = date.normalize()
         else:
@@ -862,7 +862,7 @@ class NYISO(ISOBase):
                     msg = f"{csv_filename} not found in {zip_url}"
                     log(msg, verbose)
                     continue
-                df = pd.read_csv(z.open(csv_filename))
+                df = utils.read_csv_pyarrow(z.open(csv_filename))
                 df["File Date"] = d.normalize()
 
                 df = _handle_time(df, dataset_name)

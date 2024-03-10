@@ -420,7 +420,7 @@ class ISONE(ISOBase):
                 log(msg, verbose=verbose)
                 u = f"https://www.iso-ne.com/static-transform/csv/histRpts/5min-rt-prelim/lmp_5min_{date_str}_{interval}.csv"  # noqa
                 dfs.append(
-                    pd.read_csv(
+                    utils.read_csv_pyarrow(
                         u,
                         skiprows=[0, 1, 2, 3, 5],
                         skipfooter=1,
@@ -846,7 +846,7 @@ def _make_request(url, skiprows, verbose):
                 try again later",
         )
 
-    df = pd.read_csv(
+    df = utils.read_csv_pyarrow(
         io.StringIO(response.content.decode("utf8")),
         skiprows=skiprows,
         skipfooter=1,

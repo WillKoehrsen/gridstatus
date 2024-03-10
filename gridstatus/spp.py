@@ -123,7 +123,7 @@ class SPP(ISOBase):
             raise NotSupported
 
         url = f"{FILE_BROWSER_DOWNLOAD_URL}/generation-mix-historical?path=/GenMix2Hour.csv"  # noqa
-        df_raw = pd.read_csv(url)
+        df_raw = utils.read_csv_pyarrow(url)
         historical_mix = process_gen_mix(df_raw, detailed=detailed)
 
         historical_mix = historical_mix.drop(
@@ -239,7 +239,7 @@ class SPP(ISOBase):
         url = self._short_term_load_forecast_url(date.floor("5min"))
 
         log(f"Downloading {url}", verbose=verbose)
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
 
         # According to the docs, the end time col should be GMTIntervalEnd, but it's
         # only GMTInterval in the data
@@ -279,7 +279,7 @@ class SPP(ISOBase):
         url = self._mid_term_load_forecast_url(date.floor("h"))
 
         log(f"Downloading {url}", verbose=verbose)
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
 
         df = self._post_process_load_forecast(
             df,
@@ -353,7 +353,7 @@ class SPP(ISOBase):
         url = self._short_term_solar_and_wind_url(date.floor("5min"))
 
         log(f"Downloading {url}", verbose=verbose)
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
 
         # According to the docs, the end time col should be GMTIntervalEnd, but it's
         # only GMTInterval in the data
@@ -393,7 +393,7 @@ class SPP(ISOBase):
         url = self._mid_term_solar_and_wind_url(date.floor("h"))
 
         log(f"Downloading {url}", verbose=verbose)
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
 
         df = self._post_process_solar_and_wind_forecast(
             df,
@@ -550,7 +550,7 @@ class SPP(ISOBase):
         msg = f"Downloading {url}"
         log(msg, verbose)
 
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
 
         return self._process_capacity_of_generation_on_outage(df, publish_time=date)
 
@@ -630,7 +630,7 @@ class SPP(ISOBase):
 
         msg = f"Downloading {url}"
         log(msg, verbose)
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
 
         return self._process_ver_curtailments(df)
 
@@ -709,7 +709,7 @@ class SPP(ISOBase):
 
         """
         raw_data = self.get_raw_interconnection_queue(verbose)
-        queue = pd.read_csv(raw_data, skiprows=1)
+        queue = utils.read_csv_pyarrow(raw_data, skiprows=1)
 
         queue["Status (Original)"] = queue["Status"]
         completed_val = InterconnectionQueueStatus.COMPLETED.value
@@ -877,7 +877,7 @@ class SPP(ISOBase):
     ):
         url = f"{FILE_BROWSER_DOWNLOAD_URL}/{FS_DAM_LMP_BY_LOCATION}?path=/{date.strftime('%Y')}/{date.strftime('%m')}/By_Day/DA-LMP-SL-{date.strftime('%Y%m%d')}0100.csv"  # noqa
         log(f"Downloading {url}", verbose=verbose)
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
         return df
 
     def _finalize_spp_df(self, df, market, location_type, verbose=False):
@@ -964,7 +964,7 @@ class SPP(ISOBase):
 
         msg = f"Downloading {url}"
         log(msg, verbose)
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
         return self._process_operating_reserves(df)
 
     def _process_operating_reserves(self, df):
@@ -1016,7 +1016,7 @@ class SPP(ISOBase):
 
         msg = f"Downloading {url}"
         log(msg, verbose)
-        df = pd.read_csv(url)
+        df = utils.read_csv_pyarrow(url)
 
         return self._process_day_ahead_operating_reserve_prices(df)
 
@@ -1084,7 +1084,7 @@ class SPP(ISOBase):
         log(msg, verbose)
 
         try:
-            df = pd.read_csv(url)
+            df = utils.read_csv_pyarrow(url)
         except ConnectionResetError as e:
             log(f"Error downloading {url}: {e}", verbose)
             return pd.DataFrame()
@@ -1149,7 +1149,7 @@ class SPP(ISOBase):
         for url in tqdm.tqdm(urls):
             msg = f"Fetching {url}"
             log(msg, verbose)
-            df = pd.read_csv(url)
+            df = utils.read_csv_pyarrow(url)
             all_dfs.append(df)
         return pd.concat(all_dfs)
 

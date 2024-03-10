@@ -4,7 +4,7 @@ import pandas as pd
 import pytest
 
 import gridstatus
-from gridstatus import Markets, NotSupported
+from gridstatus import Markets, NotSupported, utils
 from gridstatus.ercot import (
     ELECTRICAL_BUS_LOCATION_TYPE,
     Ercot,
@@ -29,6 +29,12 @@ class TestErcot(BaseTestISO):
     def test_get_dam_system_lambda_today(self):
         df = self.iso.get_dam_system_lambda("today", verbose=True)
 
+        import IPython
+
+        IPython.core.interactiveshell.InteractiveShell.ast_node_interactivity = (
+            "last_expr_or_assign"
+        )
+        IPython.embed()
         self._check_dam_system_lambda(df)
 
         today = pd.Timestamp.now(tz=self.iso.default_timezone).date()
@@ -1005,7 +1011,7 @@ class TestErcot(BaseTestISO):
         03/13/2016,03:00,25668.166,N
         """
         # Read the data into a DataFrame
-        df = pd.read_csv(StringIO(data_string))
+        df = utils.read_csv_pyarrow(StringIO(data_string))
 
         df = self.iso.parse_doc(df)
 
@@ -1040,7 +1046,7 @@ class TestErcot(BaseTestISO):
         11/06/2016,02:00,26981.778,Y
         """
 
-        df = pd.read_csv(StringIO(data_string))
+        df = utils.read_csv_pyarrow(StringIO(data_string))
 
         df = self.iso.parse_doc(df)
 
