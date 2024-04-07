@@ -1,6 +1,5 @@
 import json
 import urllib
-import warnings
 from typing import BinaryIO
 
 import pandas as pd
@@ -201,9 +200,7 @@ class MISO(ISOBase):
         log(f"Downloading mom forecast data from {url}", verbose)
 
         try:
-            # Ignore the UserWarning from openpyxl about styles
-            warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
-            excel_file = pd.ExcelFile(url, engine="openpyxl")
+            excel_file = pd.ExcelFile(url, engine="calamine")
         except urllib.error.HTTPError as e:
             if e.status == 404:
                 raise NoDataFoundException(
