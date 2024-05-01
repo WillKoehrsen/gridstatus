@@ -333,6 +333,12 @@ class ErcotAPI:
                 **api_params,
             )
 
+        if data.empty:
+            raise NoDataFoundException(
+                "No data found for LMP by Settlement Point with params",
+                f"{date} to {end}",
+            )
+
         data = self.ercot._handle_lmp_df(
             df=data.rename(columns={"RepeatHourFlag": "RepeatedHourFlag"}),
             verbose=verbose,
