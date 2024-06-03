@@ -1198,6 +1198,100 @@ class TestErcot(BaseTestISO):
 
         self._check_short_term_system_adequacy(df)
 
+    """get_ordc"""
+
+    def _check_ordc(self, df):
+        assert df.columns.tolist() == [
+            "SCED Timestamp",
+            "Interval Start",
+            "Interval End",
+            "BatchID",
+            "System Lambda",
+            "PRC",
+            "RTORPA",
+            "RTOFFPA",
+            "RTOLCAP",
+            "RTOFFCAP",
+            "RTOLHSL",
+            "RTBP",
+            "RTCLRCAP",
+            "RTCLRREG",
+            "RTCLRBP",
+            "RTCLRLSL",
+            "RTCLRNS",
+            "RTNCLRRRS",
+            "RTOLNSRS",
+            "RTCST30HSL",
+            "RTOFFNSHSL",
+            "RTRUCCST30HSL",
+            "RTORDPA",
+            "RTRRUC",
+            "RTRRMR",
+            "RTDNCLR",
+            "RTDERS",
+            "RTDCTIEIMPORT",
+            "RTDCTIEEXPORT",
+            "RTBLTIMPORT",
+            "RTBLTEXPORT",
+            "RTOLLASL",
+            "RTOLHASL",
+            "RTNCLRNSCAP",
+            "RTNCLRECRS",
+        ]
+
+        assert (
+            df["Interval End"] - df["Interval Start"] == pd.Timedelta(minutes=5)
+        ).all()
+
+    def test_get_ordc_today(self):
+        df = self.iso.get_ordc("today")
+
+        self._check_ordc(df)
+
+        # Approx 12 intervals per hour
+        hours_since_start_of_day = (
+            self.local_now() - self.local_start_of_today()
+        ) / pd.Timedelta(hours=1)
+
+        assert df["Interval Start"].min() == self.local_start_of_today()
+        assert len(df) >= hours_since_start_of_day * 12
+
+    def test_get_ordc_latest(self):
+        df = self.iso.get_ordc("latest")
+
+        self._check_ordc(df)
+
+        assert len(df) == 1
+
+    def test_get_ordc_historical(self):
+        date = self.local_today() - pd.DateOffset(days=3)
+        df = self.iso.get_ordc(date)
+
+        assert df["Interval Start"].min() == self.local_start_of_day(date)
+        assert df["Interval End"].max() == self.local_start_of_day(
+            date,
+        ) + pd.DateOffset(days=1)
+
+        self._check_ordc(df)
+
+        assert len(df) >= 24 * 12
+
+    def test_get_ordc_historical_range(self):
+        start = self.local_today() - pd.DateOffset(days=4)
+        end = self.local_today() - pd.DateOffset(days=2)
+        df = self.iso.get_ordc(
+            start=start,
+            end=end,
+        )
+
+        assert df["Publish Time"].nunique() >= 24
+        assert df["Interval Start"].min() == self.local_start_of_day(start)
+        assert df["Interval End"].max() == self.local_start_of_day(end) + pd.DateOffset(
+            days=6,
+        )
+
+        self._check_ordc(df)
+
     """parse_doc"""
 
     def test_parse_doc_works_on_dst_data(self):

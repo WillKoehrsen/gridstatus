@@ -102,6 +102,12 @@ SYSTEM_WIDE_ACTUALS_RTID = 12340
 SHORT_TERM_SYSTEM_ADEQUACY_REPORT_RTID = 12315
 
 
+# Operating Reserve Demand Curve (ORDC)
+# Real-Time ORDC and Reliability Deployment Price Adders and Reserves by SCED Interval
+# https://www.ercot.com/mp/data-products/data-product-details?id=NP6-323-CD
+ORDC_RTID = 13221
+
+
 class ERCOTSevenDayLoadForecastReport(Enum):
     """
     Enum class for the Medium Term (Seven Day) Load Forecasts.
@@ -2552,6 +2558,52 @@ class Ercot(ISOBase):
                 "CapLoadResTotal": "Capacity Load Resource Total",
                 "OfflineAvailableMWTotal": "Offline Available MW Total",
             },
+        )
+
+        return df
+
+    @support_date_range(frequency=None)
+    def get_ordc(self, date, end=None, verbose=False):
+        """Get Operating Reserve Demand Curve (ORDC) data.
+
+        Arguments:
+            date (str, datetime): date to get data for
+            end (str, datetime): end date to get data for
+            verbose (bool, optional): print verbose output. Defaults to False.
+
+        Returns:
+            pandas.DataFrame: A DataFrame with ORDC data
+        """
+        if date == "latest":
+            docs = [
+                self._get_document(
+                    report_type_id=ORDC_RTID,
+                    published_before=date,
+                    verbose=verbose,
+                ),
+            ]
+        else:
+            # Set date to get a full day of published data
+            if not end:
+                end = date + pd.DateOffset(days=1)
+
+            docs = self._get_documents(
+                report_type_id=ORDC_RTID,
+                published_after=date,
+                published_before=end,
+                extension="csv",
+                verbose=verbose,
+            )
+
+        return self._handle_ordc_file(docs, verbose=verbose)
+
+    def _handle_ordc_file(self, docs, verbose=False):
+        df = self.read_docs(docs, parse=False, verbose=verbose)
+        df = self._handle_sced_timestamp(df)
+
+        df = utils.move_cols_to_front(
+            df,
+            ["SCED Timestamp", "Interval Start", "Interval End", "BatchID"],
         )
 
         return df
