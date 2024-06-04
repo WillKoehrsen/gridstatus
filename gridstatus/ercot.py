@@ -2666,6 +2666,19 @@ class Ercot(ISOBase):
 
         return df.sort_values("Interval Start")
 
+    def _handle_real_time_adders_and_reserves_docs(self, docs, verbose=False):
+        df = self.read_docs(docs, parse=False, verbose=verbose)
+        df = self._handle_sced_timestamp(df)
+
+        df = utils.move_cols_to_front(
+            df,
+            ["SCED Timestamp", "Interval Start", "Interval End", "BatchID"],
+        )
+
+        df = df.rename(columns={"SystemLambda": "System Lambda"})
+
+        return df.sort_values("SCED Timestamp")
+
     def _get_document(
         self,
         report_type_id,
