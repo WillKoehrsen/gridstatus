@@ -211,7 +211,6 @@ class CAISO(ISOBase):
 
         df = self._add_forecast_publish_time(
             df,
-            current_time,
             # DAM Hourly Demand Forecast is published at 9:10 AM according to OASIS.
             # ATLAS Reference > Publications > OASIS Publications Schedule
             publish_time_offset_from_day_start=pd.Timedelta(hours=9, minutes=10),
@@ -238,8 +237,6 @@ class CAISO(ISOBase):
         if date == "latest":
             return self.get_solar_and_wind_forecast_dam("today", verbose=verbose)
 
-        current_time = pd.Timestamp.now(tz=self.default_timezone)
-
         data = self.get_oasis_dataset(
             dataset="wind_and_solar_forecast",
             date=date,
@@ -250,7 +247,6 @@ class CAISO(ISOBase):
 
         return self._process_solar_and_wind_forecast_dam(
             data,
-            current_time,
             # Day-ahead hourly wind and solar forecast is published at 7:00 AM according
             # to OASIS.
             publish_time_offset_from_day_start=pd.Timedelta(hours=7),
@@ -259,7 +255,6 @@ class CAISO(ISOBase):
     def _process_solar_and_wind_forecast_dam(
         self,
         data,
-        current_time,
         publish_time_offset_from_day_start,
     ):
         df = data[
@@ -293,9 +288,6 @@ class CAISO(ISOBase):
 
         df = self._add_forecast_publish_time(
             df,
-            current_time,
-            # Day-ahead hourly wind and solar forecast is published at 7:00 AM according
-            # to OASIS.
             publish_time_offset_from_day_start=publish_time_offset_from_day_start,
         )
 
@@ -319,7 +311,6 @@ class CAISO(ISOBase):
     def _add_forecast_publish_time(
         self,
         data,
-        current_time,
         publish_time_offset_from_day_start,
     ):
         """
@@ -335,6 +326,8 @@ class CAISO(ISOBase):
         """
         hour_offset = publish_time_offset_from_day_start.components.hours
         minute_offset = publish_time_offset_from_day_start.components.minutes
+
+        current_time = pd.Timestamp.now(tz=self.default_timezone)
 
         # Use replace to avoid DST issues
         todays_publish_time = current_time.normalize().replace(
