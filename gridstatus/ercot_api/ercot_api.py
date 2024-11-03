@@ -1068,6 +1068,7 @@ class ErcotAPI:
                     break  # Exit the loop if the operation is successful
 
                 except Exception as e:
+                    import IPython; IPython.core.interactiveshell.InteractiveShell.ast_node_interactivity = 'last_expr_or_assign'; IPython.embed()
                     if "429 Client Error" in str(e):
                         # Rate limited, so sleep for a longer time
                         log(
