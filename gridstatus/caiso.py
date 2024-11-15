@@ -866,6 +866,8 @@ class CAISO(ISOBase):
             raise ValueError(
                 f"Could not find curtailment PDF for {date}",
             )
+
+        import IPython; IPython.core.interactiveshell.InteractiveShell.ast_node_interactivity = 'last_expr_or_assign'; IPython.embed()
         pdf = io.BytesIO(r.content)
 
         if pdf is None:

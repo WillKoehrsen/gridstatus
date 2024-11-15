@@ -25,8 +25,9 @@ license = "LICENSE"
 "Issue Tracker" = "https://github.com/kmax12/gridstatus/issues"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 requests = "^2.32.2"
+pypdf-table-extraction = {git = "https://github.com/py-pdf/pypdf_table_extraction.git", rev = "71f029ab6183baf0683d4a8446f27f4d9cf9ee19"}
 pandas = "^2.2.1"
 beautifulsoup4 = "^4.8.13"
 tabulate = "^0.9.0"
