@@ -348,7 +348,7 @@ class MISO(ISOBase):
 
     @lmp_config(
         supports={
-            Markets.REAL_TIME_5_MIN: ["latest", "today"],
+            Markets.REAL_TIME_5_MIN: ["latest", "today", "historical"],
             Markets.DAY_AHEAD_HOURLY: ["today", "historical"],
             Markets.REAL_TIME_HOURLY_FINAL: ["historical"],
             Markets.REAL_TIME_HOURLY_PRELIM: ["historical"],
@@ -374,11 +374,18 @@ class MISO(ISOBase):
         if market == Markets.REAL_TIME_5_MIN:
             latest_url = "https://api.misoenergy.org/MISORTWDBIReporter/Reporter.asmx?messageType=currentinterval&returnType=csv"  # noqa
             today_url = "https://api.misoenergy.org/MISORTWDBIReporter/Reporter.asmx?messageType=rollingmarketday&returnType=csv"  # noqa
+            yesterday_url = "https://api.misoenergy.org/MISORTWDBIReporter/Reporter.asmx?messageType=previousmarketday&returnType=csv"  # noqa
 
             if date == "latest":
                 url = latest_url
             elif utils.is_today(date, tz=self.default_timezone):
                 url = today_url
+            elif utils.is_yesterday(date, tz=self.default_timezone):
+                url = yesterday_url
+            else:
+                raise NotSupported(
+                    "Only today, yesterday, and latest are supported for 5 min LMPs",
+                )
 
             log(f"Downloading LMP data from {url}", verbose)
             data = pd.read_csv(url)
