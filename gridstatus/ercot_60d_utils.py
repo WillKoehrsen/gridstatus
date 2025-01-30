@@ -353,7 +353,7 @@ def process_as_offer_curves(df):
             )
 
             if len(subset) > 1:
-                # We've identified an issue with this specific resource name where
+                # We've identified an issue with these specific resource names where
                 # there are sometimes multiple offers for the same service at the same
                 # interval. In theory this should never happen. The QUANTITY MW are
                 # only different by 0.1, so we just take the row with the lowest
