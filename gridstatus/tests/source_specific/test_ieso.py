@@ -1145,3 +1145,66 @@ class TestIESO(BaseTestISO):
         pq_columns = [col for col in df.columns if col.startswith("PQ")]
         assert len(pq_columns) > 0
         assert df[TIME_COLUMN].equals(df[TIME_COLUMN].sort_values())
+
+    """get_transmission_outages_planned"""
+
+    def _check_transmission_outages_planned(self, data: pd.DataFrame) -> None:
+        assert isinstance(data, pd.DataFrame)
+        assert data.shape[0] >= 0
+
+        assert set(data.columns) == {
+            "Interval Start",
+            "Interval End",
+            "Publish Time",
+            "Outage ID",
+            "Name",
+            "Priority",
+            "Recurrence",
+            "Type",
+            "Voltage",
+            "Constraint",
+            "Recall Time",
+            "Status",
+        }
+
+        assert self._check_is_datetime_type(data["Interval Start"])
+        assert self._check_is_datetime_type(data["Interval End"])
+        assert self._check_is_datetime_type(data["Publish Time"])
+
+        assert data["Outage ID"].dtype == "object"
+        assert data["Name"].dtype == "object"
+        assert data["Priority"].dtype == "object"
+        assert data["Recurrence"].dtype == "object"
+        assert data["Type"].dtype == "object"
+        assert data["Voltage"].dtype == "object"
+        assert data["Constraint"].dtype == "object"
+        assert data["Recall Time"].dtype == "object"
+        assert data["Status"].dtype == "object"
+
+    def test_get_transmission_outages_planned_latest(self):
+        with file_vcr.use_cassette("transmission_outages_planned_latest.yaml"):
+            data = self.iso.get_transmission_outages_planned("latest")
+
+        self._check_transmission_outages_planned(data)
+
+        assert not (
+            data.duplicated(
+                subset=[c for c in data.columns if c != "Publish Time"],
+            ).any()
+        )
+
+    def test_get_transmission_outages_planned_historical_date_range(self):
+        start = pd.Timestamp.now(tz=self.default_timezone) - pd.Timedelta(days=3)
+        end = start + pd.DateOffset(days=1)
+        with file_vcr.use_cassette(
+            f"transmission_outages_planned_historical_date_range_{start.date()}_{end.date()}.yaml",
+        ):
+            data = self.iso.get_transmission_outages_planned("today")
+
+        self._check_transmission_outages_planned(data)
+
+        assert not (
+            data.duplicated(
+                subset=[c for c in data.columns if c != "Publish Time"],
+            ).any()
+        )
