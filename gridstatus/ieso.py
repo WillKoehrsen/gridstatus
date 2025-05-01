@@ -2967,13 +2967,13 @@ class IESO(ISOBase):
         verbose: bool = False,
     ) -> pd.DataFrame:
         if date == "latest":
-            url = f"{PUBLIC_REPORTS_URL_PREFIX}/RealtimeTotals/PUB_RealtimeTotals.xml"
+            url = f"{PUBLIC_REPORTS_URL_PREFIX}/RealtimeConstTotals/PUB_RealtimeConstTotals.xml"
         else:
             hour = date.hour
             # Hour numbers are 1-24, so we need to add 1
             file_hour = f"{hour + 1}".zfill(2)
 
-            url = f"{PUBLIC_REPORTS_URL_PREFIX}/RealtimeTotals/PUB_RealtimeTotals_{date.strftime('%Y%m%d')}{file_hour}.xml"
+            url = f"{PUBLIC_REPORTS_URL_PREFIX}/RealtimeConstTotals/PUB_RealtimeConstTotals_{date.strftime('%Y%m%d')}{file_hour}.xml"
 
         xml_content = self._request(url, verbose).text
 
@@ -3009,7 +3009,7 @@ class IESO(ISOBase):
                     row["Total Loss"] = energy_mw
                 elif quantity_name == "Total Load":
                     row["Market Total Load"] = energy_mw
-                elif quantity_name == "Total Dispatch Load Scheduled OFF":
+                elif quantity_name == "Total Dispatch Load":
                     row["Total Dispatchable Load Scheduled Off"] = energy_mw
                 elif quantity_name == "Total 10S":
                     row["Total 10S"] = energy_mw
