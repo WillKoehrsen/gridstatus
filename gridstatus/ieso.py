@@ -2016,6 +2016,23 @@ class IESO(ISOBase):
             minutes_per_interval=60,
         )
 
+    def get_lmp_predispatch_hourly(
+        self,
+        date: str | pd.Timestamp | tuple[pd.Timestamp, pd.Timestamp],
+        end: pd.Timestamp | None = None,
+        verbose: bool = False,
+    ) -> pd.DataFrame:
+        if date == "latest":
+            urls = [
+                f"{PUBLIC_REPORTS_URL_PREFIX}/PredispHourlyEnergyLMP/PUB_PredispHourlyEnergyLMP.csv",
+            ]
+        else:
+            file_directory = f"{PUBLIC_REPORTS_URL_PREFIX}/PredispHourlyEnergyLMP"
+            files_and_times = self._get_directory_files_and_timestamps(
+                file_directory,
+                "PredispHourlyEnergyLMP",
+            )
+
     def _get_lmp_data(
         self,
         url: str,
@@ -2398,15 +2415,6 @@ class IESO(ISOBase):
         end: pd.Timestamp | None = None,
         verbose: bool = False,
     ) -> pd.DataFrame:
-        """Get day-ahead LMP intertie data
-
-        Args:
-            date: The date to get the data for.
-            end: The end date to get the data for.
-            verbose: Whether to print verbose output.
-        Returns:
-            DataFrame with LMP data.
-        """
         if date == "latest":
             url = f"{PUBLIC_REPORTS_URL_PREFIX}/DAHourlyIntertieLMP/PUB_DAHourlyIntertieLMP.xml"
         else:
@@ -2414,11 +2422,105 @@ class IESO(ISOBase):
 
         xml_content = self._request(url, verbose).text
 
+        return self._parse_lmp_hourly_intertie(xml_content)
+
+    @support_date_range(frequency="HOUR_START")
+    def get_lmp_predispatch_hourly_intertie(
+        self,
+        date: str | pd.Timestamp | tuple[pd.Timestamp, pd.Timestamp],
+        end: pd.Timestamp | None = None,
+        vintage: Literal["all", "latest"] = "latest",
+        verbose: bool = False,
+    ) -> pd.DataFrame:
+        file_directory = (
+            "https://reports-public.ieso.ca/public/PredispHourlyIntertieLMP/"
+        )
+
+        file_name_prefix = "PUB_PredispHourlyIntertieLMP"
+
+        # Get all links matching the date and there corresponding last modified time
+        files_and_datetimes = self._get_directory_files_and_timestamps(
+            file_directory,
+            file_name_prefix,
+        )
+
+        if date == "latest":
+            latest_file_name = "PUB_PredispHourlyIntertieLMP.xml"
+
+            urls = [
+                f"{file_directory}/{latest_file_name}"
+                for file, _ in files_and_datetimes
+                if file == latest_file_name
+            ]
+        else:
+            end = end or (date + pd.Timedelta(hours=1))
+
+            urls = [
+                f"{file_directory}/{file}"
+                for file, date_time in files_and_datetimes
+                if date <= date_time <= end
+            ]
+
+        data = []
+
+        for url in urls:
+            xml_content = self._request(url, verbose).text
+            url_data = self._parse_lmp_hourly_intertie(xml_content, pre_dispatch=True)
+            data.append(url_data)
+
+        data = pd.concat(data, ignore_index=True)
+
+        # It's possible we will have duplicates because we may have multiple files
+        # published at the same time
+        return (
+            data.drop_duplicates()
+            .sort_values(["Interval Start", "Location", "Publish Time"])
+            .reset_index(drop=True)
+        )
+
+    def _get_directory_files_and_timestamps(
+        self,
+        file_directory: str,
+        file_name_prefix: str,
+    ):
+        html_content = self._request(file_directory).text
+        soup = BeautifulSoup(html_content, "html.parser")
+        files = []
+
+        for a_tag in soup.find_all("a"):
+            href = a_tag.get("href")
+            if href and href.startswith(file_name_prefix):
+                parent_tr = a_tag.parent
+                if parent_tr:
+                    file_name = a_tag.text
+                    date_time_text = a_tag.next_sibling
+                    if date_time_text:
+                        date_time_match = re.search(
+                            r"(\d{2}-\w{3}-\d{4} \d{2}:\d{2})",
+                            date_time_text,
+                        )
+                        if date_time_match:
+                            date_time_str = date_time_match.group(1)
+                            date_time = pd.Timestamp(date_time_str).tz_localize(
+                                self.default_timezone,
+                            )
+                            files.append((href, date_time))
+
+        return sorted(files, key=lambda x: x[1], reverse=True)
+
+    def _parse_lmp_hourly_intertie(
+        self,
+        xml_content: str,
+        pre_dispatch: bool = False,
+    ) -> pd.DataFrame:
         root = ElementTree.fromstring(xml_content)
 
         ns = NAMESPACES_FOR_XML.copy()
 
-        # Get the delivery date
+        created_at = pd.Timestamp(root.find(".//CreatedAt", ns).text).tz_localize(
+            self.default_timezone,
+        )
+
         delivery_date = root.find(".//DeliveryDate", ns).text
         base_date = pd.Timestamp(delivery_date).tz_localize(self.default_timezone)
 
@@ -2431,12 +2533,6 @@ class IESO(ISOBase):
         for intertie in intertie_prices:
             # Get location name
             location = intertie.find("IntertiePLName", ns).text
-
-            # Extract location code
-            if ":LMP" in location:
-                location_code = location.split(":LMP")[0]
-            else:
-                location_code = location
 
             # Find all component groups
             components = intertie.findall("Components", ns)
@@ -2454,7 +2550,9 @@ class IESO(ISOBase):
                 hourly_values = comp.findall("HourlyLMP", ns)
 
                 for hour_data in hourly_values:
-                    hour = int(hour_data.find("DeliveryHour", ns).text)
+                    hour_str = "DeliveryHour" if not pre_dispatch else "Hour"
+
+                    hour = int(hour_data.find(hour_str, ns).text)
                     value = float(hour_data.find("LMP", ns).text)
 
                     if component_type == "Intertie LMP":
@@ -2489,7 +2587,7 @@ class IESO(ISOBase):
                         {
                             "Interval Start": interval_start,
                             "Interval End": interval_end,
-                            "Location": location_code,
+                            "Location": location,
                             "LMP": lmp,
                             "Energy": energy,
                             "Congestion": congestion,
@@ -2504,6 +2602,14 @@ class IESO(ISOBase):
             .sort_values(["Interval Start", "Location"])
             .reset_index(drop=True)
         )
+
+        if pre_dispatch:
+            # For pre-dispatch, we need to add the publish time
+            df["Publish Time"] = created_at
+            df = utils.move_cols_to_front(
+                df,
+                ["Interval Start", "Interval End", "Publish Time", "Location"],
+            )
 
         # Strip out the :LMP from the location
         df["Location"] = df["Location"].str.replace(":LMP", "")
