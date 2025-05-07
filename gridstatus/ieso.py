@@ -2406,7 +2406,8 @@ class IESO(ISOBase):
                     hour_num = int(
                         hour.find("Hour" if not predispatch else "DELIVERY_HOUR").text,
                     )
-                    price = float(hour.find("LMP").text)
+                    price = hour.find("LMP").text
+                    price = float(price) if price else None
 
                     if component_type == "Zonal Price":
                         zonal_prices[hour_num] = price
@@ -2430,7 +2431,10 @@ class IESO(ISOBase):
                     congestion = congestion_prices[hour_num]
 
                     # Calculate energy component from definition
-                    energy = lmp - loss - congestion
+                    if lmp is None or loss is None or congestion is None:
+                        energy = None
+                    else:
+                        energy = lmp - loss - congestion
 
                     data_rows.append(
                         {
@@ -2705,8 +2709,22 @@ class IESO(ISOBase):
                     # Note the slight discrepancy between the XML
                     hour_str = "DeliveryHour" if not predispatch else "Hour"
 
-                    hour = int(hour_data.find(hour_str, ns).text)
-                    value = float(hour_data.find("LMP", ns).text)
+                    hour = (
+                        int(hour_data.find(hour_str, ns).text)
+                        if hour_data.find(
+                            hour_str,
+                            ns,
+                        ).text
+                        else None
+                    )
+                    value = (
+                        float(hour_data.find("LMP", ns).text)
+                        if hour_data.find(
+                            "LMP",
+                            ns,
+                        ).text
+                        else None
+                    )
 
                     if component_type == "Intertie LMP":
                         hourly_lmp[hour] = value
@@ -2727,14 +2745,25 @@ class IESO(ISOBase):
                     interval_start = base_date + pd.Timedelta(hours=hour - 1)
                     interval_end = interval_start + pd.Timedelta(hours=1)
 
-                    lmp = hourly_lmp.get(hour, 0)
-                    congestion = hourly_congestion.get(hour, 0)
-                    loss = hourly_loss.get(hour, 0)
-                    external_congestion = hourly_external_congestion.get(hour, 0)
-                    nisl_value = hourly_nisl.get(hour, 0)
+                    lmp = hourly_lmp.get(hour)
+                    congestion = hourly_congestion.get(hour)
+                    loss = hourly_loss.get(hour)
+                    external_congestion = hourly_external_congestion.get(hour)
+                    nisl_value = hourly_nisl.get(hour)
 
                     # Note that inertie LMP includes external congestion and NISL
-                    energy = lmp - congestion - loss - external_congestion - nisl_value
+                    if (
+                        lmp is None
+                        or congestion is None
+                        or loss is None
+                        or external_congestion is None
+                        or nisl_value is None
+                    ):
+                        energy = None
+                    else:
+                        energy = (
+                            lmp - congestion - loss - external_congestion - nisl_value
+                        )
 
                     data_rows.append(
                         {
@@ -2839,9 +2868,9 @@ class IESO(ISOBase):
                 interval_start = base_datetime + pd.Timedelta(minutes=minutes_offset)
                 interval_end = interval_start + pd.Timedelta(minutes=5)
 
-                lmp = zonal_prices.get(interval, 0)
-                loss = loss_prices.get(interval, 0)
-                congestion = congestion_prices.get(interval, 0)
+                lmp = zonal_prices.get(interval)
+                loss = loss_prices.get(interval)
+                congestion = congestion_prices.get(interval)
 
                 energy = lmp - congestion - loss
 
@@ -2966,14 +2995,38 @@ class IESO(ISOBase):
 
         for component in hourly_components:
             hour = int(component.find("PricingHour", ns).text)
-            lmp = float(component.find("ZonalPrice", ns).text)
-            loss_price = float(component.find("LossPriceCapped", ns).text)
-            congestion_price = float(
-                component.find("CongestionPriceCapped", ns).text,
+            lmp = (
+                float(component.find("ZonalPrice", ns).text)
+                if component.find(
+                    "ZonalPrice",
+                    ns,
+                ).text
+                else None
+            )
+            loss_price = (
+                float(component.find("LossPriceCapped", ns).text)
+                if component.find(
+                    "LossPriceCapped",
+                    ns,
+                ).text
+                else None
+            )
+            congestion_price = (
+                float(
+                    component.find("CongestionPriceCapped", ns).text,
+                )
+                if component.find(
+                    "CongestionPriceCapped",
+                    ns,
+                ).text
+                else None
             )
 
             # Definition of LMP
-            energy = lmp - loss_price - congestion_price
+            if lmp is None or loss_price is None or congestion_price is None:
+                energy = None
+            else:
+                energy = lmp - loss_price - congestion_price
 
             interval_start = base_datetime + pd.Timedelta(hours=hour - 1)
             interval_end = interval_start + pd.Timedelta(hours=1)
