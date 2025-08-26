@@ -23,6 +23,7 @@ from gridstatus.lmp_config import lmp_config
 class NYISOLocationType(StrEnum):
     ZONE = "zone"
     GENERATOR = "generator"
+    REFERENCE_BUS = "reference_bus"
 
 
 LOAD_DATASET = "pal"
@@ -569,6 +570,7 @@ class NYISO(ISOBase):
         Supported Location Types:
             - ``zone``
             - ``generator``
+            - ``reference_bus``
 
         REAL_TIME_5_MIN is the Real Time Dispatch (RTD) market.
         REAL_TIME_15_MIN is the Real Time Commitment (RTC) market.
@@ -622,6 +624,8 @@ class NYISO(ISOBase):
             df["Location Type"] = "Zone"
         elif location_type == NYISOLocationType.GENERATOR:
             df["Location Type"] = "Generator"
+        elif location_type == NYISOLocationType.REFERENCE_BUS:
+            df["Location Type"] = "Reference Bus"
         else:
             raise ValueError(f"Invalid location_type: {location_type}")
 
@@ -1083,14 +1087,15 @@ class NYISO(ISOBase):
         return marketname
 
     def _set_location_type_for_filename(self, location_type: NYISOLocationType) -> str:
-        location_types = [NYISOLocationType.ZONE, NYISOLocationType.GENERATOR]
         if location_type == NYISOLocationType.ZONE:
             return NYISOLocationType.ZONE
         elif location_type == NYISOLocationType.GENERATOR:
             return "gen"
+        elif location_type == NYISOLocationType.REFERENCE_BUS:
+            return "refbus"
         else:
             raise ValueError(
-                f"Invalid location type. Expected one of: {location_types}",
+                f"Invalid location type. Expected one of: {list(NYISOLocationType)}",
             )
 
     def _download_nyiso_archive(

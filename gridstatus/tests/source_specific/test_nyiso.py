@@ -5,6 +5,7 @@ import pytest
 
 import gridstatus
 from gridstatus import NYISO, Markets
+from gridstatus.nyiso import NYISOLocationType
 from gridstatus.tests.base_test_iso import BaseTestISO
 from gridstatus.tests.decorators import with_markets
 from gridstatus.tests.vcr_utils import RECORD_MODE, setup_vcr
@@ -351,6 +352,61 @@ class TestNYISO(BaseTestISO):
                 location_type="generator",
             )
             assert (df_gen["Location Type"] == "Generator").all()
+
+    def test_location_type_reference_bus_filename(self):
+        """Test that reference_bus location type produces correct filename extension"""
+        result = self.iso._set_location_type_for_filename(
+            NYISOLocationType.REFERENCE_BUS,
+        )
+        assert result == "refbus"
+
+    @pytest.mark.parametrize(
+        "date,market",
+        [
+            ("2022-06-09", Markets.DAY_AHEAD_HOURLY),
+            ("2022-06-09", Markets.REAL_TIME_HOURLY),
+        ],
+    )
+    def test_get_lmp_location_type_reference_bus_historical_date(self, date, market):
+        with nyiso_vcr.use_cassette(
+            f"test_get_lmp_location_type_reference_bus_historical_date_{date}_{market.value}.yaml",
+        ):
+            df_refbus = self.iso.get_lmp(
+                date=date,
+                market=market,
+                location_type="reference_bus",
+            )
+            assert (df_refbus["Location Type"] == "Reference Bus").all()
+
+    @pytest.mark.parametrize(
+        "market",
+        [Markets.DAY_AHEAD_HOURLY, Markets.REAL_TIME_HOURLY],
+    )
+    def test_get_lmp_location_type_reference_bus_today(self, market):
+        with nyiso_vcr.use_cassette(
+            f"test_get_lmp_location_type_reference_bus_today_{market.value}.yaml",
+        ):
+            df_refbus = self.iso.get_lmp(
+                date="today",
+                market=market,
+                location_type="reference_bus",
+            )
+            assert (df_refbus["Location Type"] == "Reference Bus").all()
+
+    @pytest.mark.parametrize(
+        "market",
+        [Markets.DAY_AHEAD_HOURLY, Markets.REAL_TIME_HOURLY],
+    )
+    def test_get_lmp_location_type_reference_bus_latest(self, market):
+        with nyiso_vcr.use_cassette(
+            f"test_get_lmp_location_type_reference_bus_latest_{market.value}.yaml",
+        ):
+            df_refbus = self.iso.get_lmp(
+                date="latest",
+                market=market,
+                location_type="reference_bus",
+            )
+            assert (df_refbus["Location Type"] == "Reference Bus").all()
 
     @pytest.mark.parametrize(
         "date,market,location_type",
