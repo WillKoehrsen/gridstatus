@@ -96,6 +96,14 @@ endpoints = [
     ("daasstrikeprices_current", "/daasstrikeprices/current"),
     ("daasstrikeprices_day_20251001", "/daasstrikeprices/day/20251001"),
     ("daasstrikeprices_info", "/daasstrikeprices/info"),
+    # Five Minute RCP
+    ("fiveminutercp", "/fiveminutercp"),
+    ("fiveminutercp_type_ZONE_current", "/fiveminutercp/ZONE/current"),
+    ("fiveminutercp_type_ZONE_day_20251003", "/fiveminutercp/ZONE/day/20251003"),
+    ("fiveminutercp_type_ZONE_info", "/fiveminutercp/ZONE/info"),
+    ("fiveminutercp_current", "/fiveminutercp/current"),
+    ("fiveminutercp_day_20251003", "/fiveminutercp/day/20251003"),
+    ("fiveminutercp_info", "/fiveminutercp/info"),
 ]
 
 print(f"Testing {len(endpoints)} ISONE API endpoints...")

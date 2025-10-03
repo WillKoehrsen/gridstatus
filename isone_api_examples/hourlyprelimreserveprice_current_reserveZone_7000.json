@@ -1,14 +1,14 @@
 {
   "PrelimHourlyReservePrice": {
-    "BeginDate": "2025-10-02T15:00:00.000-04:00",
+    "BeginDate": "2025-10-03T08:00:00.000-04:00",
     "ReserveZoneId": 7000,
     "ReserveZoneName": "ROS",
-    "TenMinSpinRequirement": 374.333,
-    "Total10MinRequirement": 1494.25,
-    "Total30MinRequirement": 2268.75,
-    "TmsrDesignatedMw": 886.208,
-    "TmnsrDesignatedMw": 1018.05,
-    "TmorDesignatedMw": 2008.583,
+    "TenMinSpinRequirement": 371.167,
+    "Total10MinRequirement": 1482.667,
+    "Total30MinRequirement": 2258.083,
+    "TmsrDesignatedMw": 560.283,
+    "TmnsrDesignatedMw": 1673.767,
+    "TmorDesignatedMw": 721.717,
     "TmsrClearingPrice": 0,
     "TmnsrClearingPrice": 0,
     "TmorClearingPrice": 0

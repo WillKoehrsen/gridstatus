@@ -1,0 +1,690 @@
+{
+  "FiveMinRcps": {
+    "FiveMinRcp": [
+      {
+        "BeginDate": "2025-10-03T00:00:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:05:02.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:10:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:15:05.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:20:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:25:00.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:30:00.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:35:00.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:40:00.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:45:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:50:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T00:55:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "01"
+      },
+      {
+        "BeginDate": "2025-10-03T01:00:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:05:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:10:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:15:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:20:16.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:25:16.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:30:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:35:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:40:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:45:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:50:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T01:55:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "02"
+      },
+      {
+        "BeginDate": "2025-10-03T02:00:02.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:05:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:10:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:15:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:20:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:25:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:30:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:35:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:40:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:45:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:50:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T02:55:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "03"
+      },
+      {
+        "BeginDate": "2025-10-03T03:00:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:05:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:10:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:15:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:20:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:25:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:30:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:35:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:40:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:45:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:50:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T03:55:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "04"
+      },
+      {
+        "BeginDate": "2025-10-03T04:00:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:05:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:10:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:15:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:20:03.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:25:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:30:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:35:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:40:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:45:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:50:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T04:55:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "05"
+      },
+      {
+        "BeginDate": "2025-10-03T05:00:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:05:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:10:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:15:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:20:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:25:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:30:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:35:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:40:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:45:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:50:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T05:55:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "06"
+      },
+      {
+        "BeginDate": "2025-10-03T06:00:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:05:18.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 7.57,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:10:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:15:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:20:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:25:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:30:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:35:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:40:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:45:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:50:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T06:55:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "07"
+      },
+      {
+        "BeginDate": "2025-10-03T07:00:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:05:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:10:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:15:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.58,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:20:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:25:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:30:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:35:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:40:02.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:45:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:50:00.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T07:55:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "08"
+      },
+      {
+        "BeginDate": "2025-10-03T08:00:01.000-04:00",
+        "RegServiceClearingPrice": 0.05,
+        "RegCapacityClearingPrice": 6.11,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:05:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:10:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:15:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:20:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:25:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:30:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:35:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:40:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:45:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:50:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T08:55:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "09"
+      },
+      {
+        "BeginDate": "2025-10-03T09:00:00.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "10"
+      },
+      {
+        "BeginDate": "2025-10-03T09:05:01.000-04:00",
+        "RegServiceClearingPrice": 0,
+        "RegCapacityClearingPrice": 0,
+        "HourEnd": "10"
+      },
+      {
+        "BeginDate": "2025-10-03T09:10:00.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "10"
+      },
+      {
+        "BeginDate": "2025-10-03T09:15:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "10"
+      },
+      {
+        "BeginDate": "2025-10-03T09:20:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "10"
+      },
+      {
+        "BeginDate": "2025-10-03T09:25:01.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "10"
+      }
+    ]
+  }
+}
