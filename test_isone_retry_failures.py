@@ -1,0 +1,67 @@
+"""
+Script to retry failed endpoints with correct zone/location IDs.
+"""
+
+import json
+from pathlib import Path
+
+from gridstatus.isone_api.isone_api import ISONEAPI
+
+# Create output directory
+output_dir = Path("isone_api_examples")
+output_dir.mkdir(exist_ok=True)
+
+# Initialize API client
+api = ISONEAPI()
+
+# Retry with correct IDs
+endpoints = [
+    (
+        "hourlyfinalreserveprice_current_reserve_zone",
+        "/hourlyfinalreserveprice/current/reserveZone/7000",
+    ),  # ROS reserve zone
+    (
+        "realtimehourlyoperatingreserve_current_location",
+        "/realtimehourlyoperatingreserve/current/location/4001",
+    ),  # Maine location
+    (
+        "hourlyprelimreserveprice_current_reserve_zone",
+        "/hourlyprelimreserveprice/current/reserveZone/7000",
+    ),  # ROS reserve zone
+    (
+        "dayaheadhourlyoperatingreserve_current_location",
+        "/dayaheadhourlyoperatingreserve/current/location/4001",
+    ),  # Maine location
+]
+
+print("Retrying failed endpoints with correct IDs...")
+print(f"Output directory: {output_dir.absolute()}\n")
+
+successful = 0
+failed = 0
+
+for name, endpoint in endpoints:
+    try:
+        print(f"Testing {name}: {endpoint}...")
+        url = f"{api.base_url}{endpoint}"
+        response = api.make_api_call(url, parse_json=True)
+
+        # Save the response
+        output_file = output_dir / f"{name}.json"
+        with open(output_file, "w") as f:
+            json.dump(response, f, indent=2)
+
+        print(f"  ✓ Success - saved to {output_file}")
+        successful += 1
+
+    except Exception as e:
+        print(f"  ✗ Failed: {str(e)}")
+        failed += 1
+
+    print()
+
+print("\n" + "=" * 60)
+print(
+    f"Summary: {successful} successful, {failed} failed out of {len(endpoints)} total",
+)
+print("=" * 60)

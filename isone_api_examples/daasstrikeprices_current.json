@@ -1,0 +1,417 @@
+{
+  "isone_web_services": {
+    "day_ahead_strike_prices": {
+      "market_day": "2025-10-03T00:00:00.000-04:00",
+      "day_ahead_strike_price": [
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T00:00:00.000-04:00",
+            "local_hour_end": "01"
+          },
+          "strike_price": 39.77,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 9940.0,
+          "percentile_10_rt_hub_lmp": 22.46,
+          "percentile_25_rt_hub_lmp": 25.37,
+          "percentile_75_rt_hub_lmp": 32.68,
+          "percentile_90_rt_hub_lmp": 39.63,
+          "expected_rt_hub_lmp": 29.91,
+          "expected_closeout_charge": 0.72,
+          "expected_closeout_charge_override": 0.72
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T01:00:00.000-04:00",
+            "local_hour_end": "02"
+          },
+          "strike_price": 39.01,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 9560.0,
+          "percentile_10_rt_hub_lmp": 21.79,
+          "percentile_25_rt_hub_lmp": 24.69,
+          "percentile_75_rt_hub_lmp": 31.71,
+          "percentile_90_rt_hub_lmp": 38.24,
+          "expected_rt_hub_lmp": 29.0,
+          "expected_closeout_charge": 0.64,
+          "expected_closeout_charge_override": 0.64
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T02:00:00.000-04:00",
+            "local_hour_end": "03"
+          },
+          "strike_price": 38.38,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 9320.0,
+          "percentile_10_rt_hub_lmp": 21.37,
+          "percentile_25_rt_hub_lmp": 24.27,
+          "percentile_75_rt_hub_lmp": 31.11,
+          "percentile_90_rt_hub_lmp": 37.41,
+          "expected_rt_hub_lmp": 28.43,
+          "expected_closeout_charge": 0.6,
+          "expected_closeout_charge_override": 0.6
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T03:00:00.000-04:00",
+            "local_hour_end": "04"
+          },
+          "strike_price": 38.68,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 9300.0,
+          "percentile_10_rt_hub_lmp": 21.38,
+          "percentile_25_rt_hub_lmp": 24.28,
+          "percentile_75_rt_hub_lmp": 31.34,
+          "percentile_90_rt_hub_lmp": 38.22,
+          "expected_rt_hub_lmp": 28.65,
+          "expected_closeout_charge": 0.66,
+          "expected_closeout_charge_override": 0.67
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T04:00:00.000-04:00",
+            "local_hour_end": "05"
+          },
+          "strike_price": 39.48,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 9500.0,
+          "percentile_10_rt_hub_lmp": 21.76,
+          "percentile_25_rt_hub_lmp": 24.65,
+          "percentile_75_rt_hub_lmp": 32.24,
+          "percentile_90_rt_hub_lmp": 40.05,
+          "expected_rt_hub_lmp": 29.45,
+          "expected_closeout_charge": 0.81,
+          "expected_closeout_charge_override": 0.81
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T05:00:00.000-04:00",
+            "local_hour_end": "06"
+          },
+          "strike_price": 42.25,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 10320.0,
+          "percentile_10_rt_hub_lmp": 22.96,
+          "percentile_25_rt_hub_lmp": 25.94,
+          "percentile_75_rt_hub_lmp": 36.41,
+          "percentile_90_rt_hub_lmp": 45.71,
+          "expected_rt_hub_lmp": 32.39,
+          "expected_closeout_charge": 1.41,
+          "expected_closeout_charge_override": 1.41
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T06:00:00.000-04:00",
+            "local_hour_end": "07"
+          },
+          "strike_price": 49.13,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 11610.0,
+          "percentile_10_rt_hub_lmp": 25.15,
+          "percentile_25_rt_hub_lmp": 28.48,
+          "percentile_75_rt_hub_lmp": 44.95,
+          "percentile_90_rt_hub_lmp": 54.51,
+          "expected_rt_hub_lmp": 38.06,
+          "expected_closeout_charge": 2.25,
+          "expected_closeout_charge_override": 2.61
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T07:00:00.000-04:00",
+            "local_hour_end": "08"
+          },
+          "strike_price": 49.21,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 12130.0,
+          "percentile_10_rt_hub_lmp": 25.67,
+          "percentile_25_rt_hub_lmp": 29.0,
+          "percentile_75_rt_hub_lmp": 44.93,
+          "percentile_90_rt_hub_lmp": 54.77,
+          "expected_rt_hub_lmp": 38.54,
+          "expected_closeout_charge": 2.45,
+          "expected_closeout_charge_override": 2.69
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T08:00:00.000-04:00",
+            "local_hour_end": "09"
+          },
+          "strike_price": 41.14,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 10910.0,
+          "percentile_10_rt_hub_lmp": 22.59,
+          "percentile_25_rt_hub_lmp": 25.67,
+          "percentile_75_rt_hub_lmp": 33.22,
+          "percentile_90_rt_hub_lmp": 40.78,
+          "expected_rt_hub_lmp": 30.45,
+          "expected_closeout_charge": 0.81,
+          "expected_closeout_charge_override": 1.03
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T09:00:00.000-04:00",
+            "local_hour_end": "10"
+          },
+          "strike_price": 36.82,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 9820.0,
+          "percentile_10_rt_hub_lmp": 20.3,
+          "percentile_25_rt_hub_lmp": 23.67,
+          "percentile_75_rt_hub_lmp": 30.1,
+          "percentile_90_rt_hub_lmp": 34.54,
+          "expected_rt_hub_lmp": 27.06,
+          "expected_closeout_charge": 0.48,
+          "expected_closeout_charge_override": 0.48
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T10:00:00.000-04:00",
+            "local_hour_end": "11"
+          },
+          "strike_price": 34.79,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 8940.0,
+          "percentile_10_rt_hub_lmp": 18.41,
+          "percentile_25_rt_hub_lmp": 22.1,
+          "percentile_75_rt_hub_lmp": 28.1,
+          "percentile_90_rt_hub_lmp": 31.38,
+          "expected_rt_hub_lmp": 24.68,
+          "expected_closeout_charge": 0.32,
+          "expected_closeout_charge_override": 0.36
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T11:00:00.000-04:00",
+            "local_hour_end": "12"
+          },
+          "strike_price": 32.9,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 8290.0,
+          "percentile_10_rt_hub_lmp": 17.16,
+          "percentile_25_rt_hub_lmp": 21.0,
+          "percentile_75_rt_hub_lmp": 26.73,
+          "percentile_90_rt_hub_lmp": 29.59,
+          "expected_rt_hub_lmp": 23.09,
+          "expected_closeout_charge": 0.27,
+          "expected_closeout_charge_override": 0.27
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T12:00:00.000-04:00",
+            "local_hour_end": "13"
+          },
+          "strike_price": 32.86,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 8120.0,
+          "percentile_10_rt_hub_lmp": 16.95,
+          "percentile_25_rt_hub_lmp": 20.71,
+          "percentile_75_rt_hub_lmp": 26.47,
+          "percentile_90_rt_hub_lmp": 29.39,
+          "expected_rt_hub_lmp": 22.86,
+          "expected_closeout_charge": 0.31,
+          "expected_closeout_charge_override": 0.34
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T13:00:00.000-04:00",
+            "local_hour_end": "14"
+          },
+          "strike_price": 32.92,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 8340.0,
+          "percentile_10_rt_hub_lmp": 17.09,
+          "percentile_25_rt_hub_lmp": 20.95,
+          "percentile_75_rt_hub_lmp": 26.96,
+          "percentile_90_rt_hub_lmp": 30.2,
+          "expected_rt_hub_lmp": 23.4,
+          "expected_closeout_charge": 0.43,
+          "expected_closeout_charge_override": 0.43
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T14:00:00.000-04:00",
+            "local_hour_end": "15"
+          },
+          "strike_price": 33.89,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 8630.0,
+          "percentile_10_rt_hub_lmp": 17.22,
+          "percentile_25_rt_hub_lmp": 21.31,
+          "percentile_75_rt_hub_lmp": 27.6,
+          "percentile_90_rt_hub_lmp": 31.16,
+          "expected_rt_hub_lmp": 24.02,
+          "expected_closeout_charge": 0.47,
+          "expected_closeout_charge_override": 0.49
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T15:00:00.000-04:00",
+            "local_hour_end": "16"
+          },
+          "strike_price": 35.98,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 9880.0,
+          "percentile_10_rt_hub_lmp": 18.72,
+          "percentile_25_rt_hub_lmp": 22.94,
+          "percentile_75_rt_hub_lmp": 30.7,
+          "percentile_90_rt_hub_lmp": 38.49,
+          "expected_rt_hub_lmp": 27.34,
+          "expected_closeout_charge": 1.18,
+          "expected_closeout_charge_override": 1.18
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T16:00:00.000-04:00",
+            "local_hour_end": "17"
+          },
+          "strike_price": 40.87,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 11350.0,
+          "percentile_10_rt_hub_lmp": 21.37,
+          "percentile_25_rt_hub_lmp": 25.52,
+          "percentile_75_rt_hub_lmp": 36.47,
+          "percentile_90_rt_hub_lmp": 47.35,
+          "expected_rt_hub_lmp": 32.02,
+          "expected_closeout_charge": 1.85,
+          "expected_closeout_charge_override": 1.85
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T17:00:00.000-04:00",
+            "local_hour_end": "18"
+          },
+          "strike_price": 48.71,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 12700.0,
+          "percentile_10_rt_hub_lmp": 25.44,
+          "percentile_25_rt_hub_lmp": 29.59,
+          "percentile_75_rt_hub_lmp": 46.27,
+          "percentile_90_rt_hub_lmp": 56.4,
+          "expected_rt_hub_lmp": 38.84,
+          "expected_closeout_charge": 2.37,
+          "expected_closeout_charge_override": 2.37
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T18:00:00.000-04:00",
+            "local_hour_end": "19"
+          },
+          "strike_price": 51.4,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 13300.0,
+          "percentile_10_rt_hub_lmp": 27.38,
+          "percentile_25_rt_hub_lmp": 31.63,
+          "percentile_75_rt_hub_lmp": 48.76,
+          "percentile_90_rt_hub_lmp": 57.6,
+          "expected_rt_hub_lmp": 41.31,
+          "expected_closeout_charge": 2.29,
+          "expected_closeout_charge_override": 2.29
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T19:00:00.000-04:00",
+            "local_hour_end": "20"
+          },
+          "strike_price": 50.6,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 13190.0,
+          "percentile_10_rt_hub_lmp": 27.55,
+          "percentile_25_rt_hub_lmp": 31.58,
+          "percentile_75_rt_hub_lmp": 47.47,
+          "percentile_90_rt_hub_lmp": 56.09,
+          "expected_rt_hub_lmp": 40.68,
+          "expected_closeout_charge": 2.15,
+          "expected_closeout_charge_override": 2.15
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T20:00:00.000-04:00",
+            "local_hour_end": "21"
+          },
+          "strike_price": 47.54,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 12750.0,
+          "percentile_10_rt_hub_lmp": 26.4,
+          "percentile_25_rt_hub_lmp": 30.06,
+          "percentile_75_rt_hub_lmp": 43.13,
+          "percentile_90_rt_hub_lmp": 52.11,
+          "expected_rt_hub_lmp": 37.8,
+          "expected_closeout_charge": 1.82,
+          "expected_closeout_charge_override": 1.82
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T21:00:00.000-04:00",
+            "local_hour_end": "22"
+          },
+          "strike_price": 44.96,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 12110.0,
+          "percentile_10_rt_hub_lmp": 25.15,
+          "percentile_25_rt_hub_lmp": 28.57,
+          "percentile_75_rt_hub_lmp": 39.13,
+          "percentile_90_rt_hub_lmp": 47.79,
+          "expected_rt_hub_lmp": 35.06,
+          "expected_closeout_charge": 1.38,
+          "expected_closeout_charge_override": 1.38
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T22:00:00.000-04:00",
+            "local_hour_end": "23"
+          },
+          "strike_price": 42.37,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 11290.0,
+          "percentile_10_rt_hub_lmp": 23.86,
+          "percentile_25_rt_hub_lmp": 27.13,
+          "percentile_75_rt_hub_lmp": 35.82,
+          "percentile_90_rt_hub_lmp": 43.46,
+          "expected_rt_hub_lmp": 32.48,
+          "expected_closeout_charge": 0.98,
+          "expected_closeout_charge_override": 0.98
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T23:00:00.000-04:00",
+            "local_hour_end": "24"
+          },
+          "strike_price": 40.31,
+          "strike_price_timestamp": "2025-10-02T10:30:37.000-04:00",
+          "spc_load_forecast_mw": 10470.0,
+          "percentile_10_rt_hub_lmp": 22.67,
+          "percentile_25_rt_hub_lmp": 25.86,
+          "percentile_75_rt_hub_lmp": 33.47,
+          "percentile_90_rt_hub_lmp": 39.75,
+          "expected_rt_hub_lmp": 30.39,
+          "expected_closeout_charge": 0.68,
+          "expected_closeout_charge_override": 0.68
+        }
+      ]
+    }
+  }
+}

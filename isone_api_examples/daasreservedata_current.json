@@ -1,0 +1,465 @@
+{
+  "isone_web_services": {
+    "day_ahead_reserves": {
+      "market_day": "2025-10-03T00:00:00.000-04:00",
+      "day_ahead_reserve": [
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T00:00:00.000-04:00",
+            "local_hour_end": "01"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 9940.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.6,
+          "fer_clearing_price": 1.08,
+          "tmsr_designation_mw": 633.3,
+          "tmnsr_designation_mw": 1494.0,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 142.9
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T01:00:00.000-04:00",
+            "local_hour_end": "02"
+          },
+          "ten_min_spin_req_mw": 373.8,
+          "total_ten_min_req_mw": 1495.2,
+          "total_thirty_min_req_mw": 2270.2,
+          "forecasted_energy_req_mw": 9560.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.99,
+          "fer_clearing_price": 1.22,
+          "tmsr_designation_mw": 683.3,
+          "tmnsr_designation_mw": 1509.5,
+          "tmor_designation_mw": 2270.2,
+          "eir_designation_mw": 109.9
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T02:00:00.000-04:00",
+            "local_hour_end": "03"
+          },
+          "ten_min_spin_req_mw": 373.8,
+          "total_ten_min_req_mw": 1495.2,
+          "total_thirty_min_req_mw": 2270.2,
+          "forecasted_energy_req_mw": 9320.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.9,
+          "fer_clearing_price": 1.9,
+          "tmsr_designation_mw": 634.5,
+          "tmnsr_designation_mw": 1495.2,
+          "tmor_designation_mw": 2270.2,
+          "eir_designation_mw": 257.3
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T03:00:00.000-04:00",
+            "local_hour_end": "04"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 9300.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.6,
+          "fer_clearing_price": 1.6,
+          "tmsr_designation_mw": 633.3,
+          "tmnsr_designation_mw": 1494.0,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 464.6
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T04:00:00.000-04:00",
+            "local_hour_end": "05"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 9500.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.62,
+          "fer_clearing_price": 1.54,
+          "tmsr_designation_mw": 633.3,
+          "tmnsr_designation_mw": 1494.0,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 365.8
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T05:00:00.000-04:00",
+            "local_hour_end": "06"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 10320.0,
+          "tmsr_clearing_price": 5.84,
+          "tmnsr_clearing_price": 5.84,
+          "tmor_clearing_price": 5.57,
+          "fer_clearing_price": 5.57,
+          "tmsr_designation_mw": 591.6,
+          "tmnsr_designation_mw": 1494.0,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 453.2
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T06:00:00.000-04:00",
+            "local_hour_end": "07"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 11610.0,
+          "tmsr_clearing_price": 23.7,
+          "tmnsr_clearing_price": 23.7,
+          "tmor_clearing_price": 23.7,
+          "fer_clearing_price": 14.61,
+          "tmsr_designation_mw": 446.5,
+          "tmnsr_designation_mw": 1804.3,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 230.1
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T07:00:00.000-04:00",
+            "local_hour_end": "08"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 12130.0,
+          "tmsr_clearing_price": 17.7,
+          "tmnsr_clearing_price": 17.7,
+          "tmor_clearing_price": 17.7,
+          "fer_clearing_price": 11.75,
+          "tmsr_designation_mw": 387.7,
+          "tmnsr_designation_mw": 1782.5,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 290.0
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T08:00:00.000-04:00",
+            "local_hour_end": "09"
+          },
+          "ten_min_spin_req_mw": 369.0,
+          "total_ten_min_req_mw": 1476.0,
+          "total_thirty_min_req_mw": 2221.5,
+          "forecasted_energy_req_mw": 10910.0,
+          "tmsr_clearing_price": 9.44,
+          "tmnsr_clearing_price": 9.44,
+          "tmor_clearing_price": 9.44,
+          "fer_clearing_price": 7.08,
+          "tmsr_designation_mw": 540.5,
+          "tmnsr_designation_mw": 1688.7,
+          "tmor_designation_mw": 2221.5,
+          "eir_designation_mw": 288.9
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T09:00:00.000-04:00",
+            "local_hour_end": "10"
+          },
+          "ten_min_spin_req_mw": 369.0,
+          "total_ten_min_req_mw": 1476.0,
+          "total_thirty_min_req_mw": 2221.5,
+          "forecasted_energy_req_mw": 9820.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.99,
+          "fer_clearing_price": 1.99,
+          "tmsr_designation_mw": 599.0,
+          "tmnsr_designation_mw": 1556.5,
+          "tmor_designation_mw": 2221.5,
+          "eir_designation_mw": 359.1
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T10:00:00.000-04:00",
+            "local_hour_end": "11"
+          },
+          "ten_min_spin_req_mw": 369.0,
+          "total_ten_min_req_mw": 1476.0,
+          "total_thirty_min_req_mw": 2237.0,
+          "forecasted_energy_req_mw": 8940.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.99,
+          "fer_clearing_price": 0.0,
+          "tmsr_designation_mw": 558.3,
+          "tmnsr_designation_mw": 1521.0,
+          "tmor_designation_mw": 2237.0,
+          "eir_designation_mw": 0.0
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T11:00:00.000-04:00",
+            "local_hour_end": "12"
+          },
+          "ten_min_spin_req_mw": 370.2,
+          "total_ten_min_req_mw": 1480.8,
+          "total_thirty_min_req_mw": 2255.8,
+          "forecasted_energy_req_mw": 8290.0,
+          "tmsr_clearing_price": 1.88,
+          "tmnsr_clearing_price": 1.88,
+          "tmor_clearing_price": 1.88,
+          "fer_clearing_price": 0.0,
+          "tmsr_designation_mw": 409.2,
+          "tmnsr_designation_mw": 1549.5,
+          "tmor_designation_mw": 2255.8,
+          "eir_designation_mw": 0.0
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T12:00:00.000-04:00",
+            "local_hour_end": "13"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 8120.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.99,
+          "fer_clearing_price": 0.0,
+          "tmsr_designation_mw": 503.2,
+          "tmnsr_designation_mw": 1567.6,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 0.0
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T13:00:00.000-04:00",
+            "local_hour_end": "14"
+          },
+          "ten_min_spin_req_mw": 373.8,
+          "total_ten_min_req_mw": 1495.2,
+          "total_thirty_min_req_mw": 2270.2,
+          "forecasted_energy_req_mw": 8340.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.99,
+          "fer_clearing_price": 0.0,
+          "tmsr_designation_mw": 506.5,
+          "tmnsr_designation_mw": 1570.8,
+          "tmor_designation_mw": 2270.2,
+          "eir_designation_mw": 0.0
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T14:00:00.000-04:00",
+            "local_hour_end": "15"
+          },
+          "ten_min_spin_req_mw": 373.8,
+          "total_ten_min_req_mw": 1495.2,
+          "total_thirty_min_req_mw": 2270.2,
+          "forecasted_energy_req_mw": 8630.0,
+          "tmsr_clearing_price": 1.99,
+          "tmnsr_clearing_price": 1.99,
+          "tmor_clearing_price": 1.99,
+          "fer_clearing_price": 0.0,
+          "tmsr_designation_mw": 401.9,
+          "tmnsr_designation_mw": 1572.7,
+          "tmor_designation_mw": 2270.2,
+          "eir_designation_mw": 0.0
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T15:00:00.000-04:00",
+            "local_hour_end": "16"
+          },
+          "ten_min_spin_req_mw": 373.8,
+          "total_ten_min_req_mw": 1495.2,
+          "total_thirty_min_req_mw": 2270.2,
+          "forecasted_energy_req_mw": 9880.0,
+          "tmsr_clearing_price": 2.22,
+          "tmnsr_clearing_price": 2.22,
+          "tmor_clearing_price": 2.22,
+          "fer_clearing_price": 2.22,
+          "tmsr_designation_mw": 666.0,
+          "tmnsr_designation_mw": 1800.4,
+          "tmor_designation_mw": 2270.2,
+          "eir_designation_mw": 604.1
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T16:00:00.000-04:00",
+            "local_hour_end": "17"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 11350.0,
+          "tmsr_clearing_price": 3.61,
+          "tmnsr_clearing_price": 3.61,
+          "tmor_clearing_price": 3.61,
+          "fer_clearing_price": 3.13,
+          "tmsr_designation_mw": 568.3,
+          "tmnsr_designation_mw": 1738.9,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 158.3
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T17:00:00.000-04:00",
+            "local_hour_end": "18"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 12700.0,
+          "tmsr_clearing_price": 14.44,
+          "tmnsr_clearing_price": 14.44,
+          "tmor_clearing_price": 14.44,
+          "fer_clearing_price": 4.56,
+          "tmsr_designation_mw": 379.9,
+          "tmnsr_designation_mw": 1699.6,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 219.9
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T18:00:00.000-04:00",
+            "local_hour_end": "19"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 13300.0,
+          "tmsr_clearing_price": 20.39,
+          "tmnsr_clearing_price": 12.03,
+          "tmor_clearing_price": 12.03,
+          "fer_clearing_price": 4.56,
+          "tmsr_designation_mw": 373.5,
+          "tmnsr_designation_mw": 1722.4,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 212.2
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T19:00:00.000-04:00",
+            "local_hour_end": "20"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 13190.0,
+          "tmsr_clearing_price": 24.02,
+          "tmnsr_clearing_price": 15.98,
+          "tmor_clearing_price": 15.98,
+          "fer_clearing_price": 15.98,
+          "tmsr_designation_mw": 373.5,
+          "tmnsr_designation_mw": 1763.4,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 323.7
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T20:00:00.000-04:00",
+            "local_hour_end": "21"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 12750.0,
+          "tmsr_clearing_price": 5.51,
+          "tmnsr_clearing_price": 5.51,
+          "tmor_clearing_price": 5.51,
+          "fer_clearing_price": 3.46,
+          "tmsr_designation_mw": 451.2,
+          "tmnsr_designation_mw": 1664.3,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 181.7
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T21:00:00.000-04:00",
+            "local_hour_end": "22"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 12110.0,
+          "tmsr_clearing_price": 2.75,
+          "tmnsr_clearing_price": 2.75,
+          "tmor_clearing_price": 2.75,
+          "fer_clearing_price": 2.75,
+          "tmsr_designation_mw": 535.0,
+          "tmnsr_designation_mw": 1687.0,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 256.6
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T22:00:00.000-04:00",
+            "local_hour_end": "23"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 11290.0,
+          "tmsr_clearing_price": 11.49,
+          "tmnsr_clearing_price": 11.49,
+          "tmor_clearing_price": 11.49,
+          "fer_clearing_price": 11.49,
+          "tmsr_designation_mw": 625.1,
+          "tmnsr_designation_mw": 1838.4,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 637.0
+        },
+        {
+          "market_hour": {
+            "gmt_begin_date": "2025-10-03T00:00:00.000-04:00",
+            "local_day": "2025-10-03T23:00:00.000-04:00",
+            "local_hour_end": "24"
+          },
+          "ten_min_spin_req_mw": 373.5,
+          "total_ten_min_req_mw": 1494.0,
+          "total_thirty_min_req_mw": 2269.0,
+          "forecasted_energy_req_mw": 10470.0,
+          "tmsr_clearing_price": 10.42,
+          "tmnsr_clearing_price": 10.42,
+          "tmor_clearing_price": 10.42,
+          "fer_clearing_price": 10.42,
+          "tmsr_designation_mw": 822.7,
+          "tmnsr_designation_mw": 1725.1,
+          "tmor_designation_mw": 2269.0,
+          "eir_designation_mw": 741.6
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "FinalHourlyReservePrices": {
+    "FinalHourlyReservePrice": [
+      {
+        "BeginDate": "2025-10-01T23:00:00.000-04:00",
+        "ReserveZoneId": 7000,
+        "ReserveZoneName": "ROS",
+        "TenMinSpinRequirement": 372.417,
+        "Total10MinRequirement": 1487.917,
+        "Total30MinRequirement": 2252.417,
+        "TmsrDesignatedMw": 714.167,
+        "TmnsrDesignatedMw": 1372.075,
+        "TmorDesignatedMw": 1489.242,
+        "TmsrClearingPrice": 0,
+        "TmnsrClearingPrice": 0,
+        "TmorClearingPrice": 0
+      },
+      {
+        "BeginDate": "2025-10-01T23:00:00.000-04:00",
+        "ReserveZoneId": 7001,
+        "ReserveZoneName": "SWCT",
+        "TenMinSpinRequirement": 0,
+        "Total10MinRequirement": 0,
+        "Total30MinRequirement": 737.817,
+        "TmsrDesignatedMw": 134.317,
+        "TmnsrDesignatedMw": 324.425,
+        "TmorDesignatedMw": 234.675,
+        "TmsrClearingPrice": 0,
+        "TmnsrClearingPrice": 0,
+        "TmorClearingPrice": 0
+      },
+      {
+        "BeginDate": "2025-10-01T23:00:00.000-04:00",
+        "ReserveZoneId": 7002,
+        "ReserveZoneName": "CT",
+        "TenMinSpinRequirement": 0,
+        "Total10MinRequirement": 0,
+        "Total30MinRequirement": 1413.05,
+        "TmsrDesignatedMw": 181.017,
+        "TmnsrDesignatedMw": 244.3,
+        "TmorDesignatedMw": 191.617,
+        "TmsrClearingPrice": 0,
+        "TmnsrClearingPrice": 0,
+        "TmorClearingPrice": 0
+      },
+      {
+        "BeginDate": "2025-10-01T23:00:00.000-04:00",
+        "ReserveZoneId": 7003,
+        "ReserveZoneName": "NEMABSTN",
+        "TenMinSpinRequirement": 0,
+        "Total10MinRequirement": 0,
+        "Total30MinRequirement": 1000,
+        "TmsrDesignatedMw": 37.933,
+        "TmnsrDesignatedMw": 72.425,
+        "TmorDesignatedMw": 109.758,
+        "TmsrClearingPrice": 0,
+        "TmnsrClearingPrice": 0,
+        "TmorClearingPrice": 0
+      }
+    ]
+  }
+}
