@@ -48,8 +48,8 @@ endpoints = [
         "/realtimehourlyoperatingreserve/current/locationType/ZONE",
     ),
     (
-        "realtimehourlyoperatingreserve_day_20251001_location_4001",
-        "/realtimehourlyoperatingreserve/day/20251001/location/4001",
+        "realtimehourlyoperatingreserve_day_20101001_location_7000",
+        "/realtimehourlyoperatingreserve/day/20101001/location/7000",
     ),
     ("realtimehourlyoperatingreserve_info", "/realtimehourlyoperatingreserve/info"),
     # Hourly Prelim Reserve Price

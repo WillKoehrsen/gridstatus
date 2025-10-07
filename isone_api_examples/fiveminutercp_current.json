@@ -2,7 +2,7 @@
   "FiveMinRcps": {
     "FiveMinRcp": [
       {
-        "BeginDate": "2025-10-03T09:25:01.000-04:00",
+        "BeginDate": "2025-10-03T09:40:00.000-04:00",
         "RegServiceClearingPrice": 0.01,
         "RegCapacityClearingPrice": 10,
         "HourEnd": "10"

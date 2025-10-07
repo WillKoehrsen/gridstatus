@@ -684,6 +684,24 @@
         "RegServiceClearingPrice": 0.01,
         "RegCapacityClearingPrice": 10,
         "HourEnd": "10"
+      },
+      {
+        "BeginDate": "2025-10-03T09:30:00.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "10"
+      },
+      {
+        "BeginDate": "2025-10-03T09:35:00.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "10"
+      },
+      {
+        "BeginDate": "2025-10-03T09:40:00.000-04:00",
+        "RegServiceClearingPrice": 0.01,
+        "RegCapacityClearingPrice": 10,
+        "HourEnd": "10"
       }
     ]
   }
