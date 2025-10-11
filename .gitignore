@@ -166,3 +166,5 @@ cython_debug/
 # But allow this specific certificate file
 !gridstatus/public_certificates/ieso/intermediate_and_root.pem
 !gridstatus/public_certificates/miso_api/intermediate_and_root.pem
+
+isone_api_examples/

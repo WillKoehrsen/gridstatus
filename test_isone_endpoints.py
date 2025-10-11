@@ -104,6 +104,16 @@ endpoints = [
     ("fiveminutercp_current", "/fiveminutercp/current"),
     ("fiveminutercp_day_20251003", "/fiveminutercp/day/20251003"),
     ("fiveminutercp_info", "/fiveminutercp/info"),
+    # Hourly RCP final
+    ("hourlyrcp_final", "/hourlyrcp/final"),
+    ("hourlyrcp_final_current", "/hourlyrcp/final/current"),
+    ("hourlyrcp_final_day_20251003", "/hourlyrcp/final/day/20251003"),
+    ("hourlyrcp_final_info", "/hourlyrcp/final/info"),
+    # Hourly RCP prelim
+    ("hourlyrcp_prelim", "/hourlyrcp/prelim"),
+    ("hourlyrcp_prelim_current", "/hourlyrcp/prelim/current"),
+    ("hourlyrcp_prelim_day_20251003", "/hourlyrcp/prelim/day/20251003"),
+    ("hourlyrcp_prelim_info", "/hourlyrcp/prelim/info"),
 ]
 
 print(f"Testing {len(endpoints)} ISONE API endpoints...")
