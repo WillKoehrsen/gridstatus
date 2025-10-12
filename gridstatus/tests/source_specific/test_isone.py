@@ -68,8 +68,14 @@ class TestISONE(BaseTestISO):
         self._check_time_columns(df, "interval")
 
     def test_get_btm_solar_range(self):
+        # Use recent dates to ensure data availability
+        start_date = pd.Timestamp.now(
+            tz=self.iso.default_timezone,
+        ).normalize() - pd.Timedelta(days=5)
+        end_date = start_date + pd.Timedelta(days=2)
+
         df = self.iso.get_btm_solar(
-            date=("April 12, 2023", "April 14, 2023"),
+            date=(start_date, end_date),
             verbose=VERBOSE,
         )
 

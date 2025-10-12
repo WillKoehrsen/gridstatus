@@ -886,7 +886,18 @@ class ISONEAPI:
         if date == "latest":
             # NB: We don't quite know when this is published each day,
             # and don't have a /current/all option for final data, so grab the full day on "latest"
-            return self.get_lmp_real_time_5_min_final("today")
+            # Final data has a publishing delay of ~1 day, so try yesterday if today fails
+            try:
+                target_date = pd.Timestamp.now(tz=self.default_timezone).normalize()
+                return self.get_lmp_real_time_5_min_final(target_date)
+            except (ValueError, KeyError):
+                # ValueError: "No objects to concatenate" - no data returned from API
+                # KeyError: 'FiveMinLmp' - API response doesn't contain expected key
+                # Try yesterday instead
+                target_date = pd.Timestamp.now(
+                    tz=self.default_timezone,
+                ).normalize() - pd.Timedelta(days=1)
+                return self.get_lmp_real_time_5_min_final(target_date)
 
         url = f"{self.base_url}/fiveminutelmp/final/day/{date.strftime('%Y%m%d')}/starthour/{date.hour:02d}"
         return self._handle_lmp_real_time(url, verbose, interval_minutes=5)
