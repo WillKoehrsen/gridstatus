@@ -2511,16 +2511,33 @@ class PJM(ISOBase):
                 pd.Timestamp.now(self.default_timezone) - pd.Timedelta(days=1)
             ).strftime("%Y-%m-%d")
 
-        df = self._get_pjm_json(
-            "rt_dispatch_reserves",
-            start=date,
-            end=end,
-            params={
-                "fields": "datetime_beginning_utc,area,reserve_type,total_reserve_mw,reserve_reqmt_mw,reliability_reqmt_mw,extended_reqmt_mw,additional_extended_reqmt_mw,deficit_mw",
-            },
-            interval_duration_min=5,
-            verbose=verbose,
-        )
+        # Try to get data, and if no data found, go back one more day
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                df = self._get_pjm_json(
+                    "rt_dispatch_reserves",
+                    start=date,
+                    end=end,
+                    params={
+                        "fields": "datetime_beginning_utc,area,reserve_type,total_reserve_mw,reserve_reqmt_mw,reliability_reqmt_mw,extended_reqmt_mw,additional_extended_reqmt_mw,deficit_mw",
+                    },
+                    interval_duration_min=5,
+                    verbose=verbose,
+                )
+                break
+            except NoDataFoundException:
+                if attempt < max_retries - 1:
+                    # Go back one more day and try again
+                    date = (pd.Timestamp(date) - pd.Timedelta(days=1)).strftime(
+                        "%Y-%m-%d",
+                    )
+                    logger.info(
+                        f"No data found for rt_dispatch_reserves, retrying with date {date}",
+                    )
+                else:
+                    # Re-raise on final attempt
+                    raise
 
         df = df.rename(
             columns={

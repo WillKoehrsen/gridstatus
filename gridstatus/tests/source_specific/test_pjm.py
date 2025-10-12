@@ -2307,9 +2307,10 @@ class TestPJM(BaseTestISO):
                 df.columns.tolist() == self.expected_dispatched_reserves_verified_cols
             )
 
+            # Data may be delayed by a few days, so allow up to 3 days back
             assert df[
                 "Interval Start"
-            ].min() >= self.local_start_of_today() - pd.Timedelta(days=1)
+            ].min() >= self.local_start_of_today() - pd.Timedelta(days=4)
             assert df["Interval End"].max() <= self.local_start_of_today()
 
             assert df["Ancillary Service"].dtype == object
